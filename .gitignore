@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# build output
+.next/
+out/
+
+# env files
+.env
+.env.local
+
+# seed data
+scripts/adm4.csv
+
+# Seed data (large, one-time)
+scripts/adm4.csv
+scripts/*.csv
+scripts/kodewil.txt
+scripts/*convert*
+scripts/*normalize*
+scripts/*test*
+
+

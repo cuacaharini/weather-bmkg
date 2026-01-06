@@ -7,9 +7,29 @@ export async function reverseGeocode(lat: number, lon: number) {
   const a = data.address || {}
 
   return {
-    desa: a.village || a.suburb || "",
-    kecamatan: a.county || "",
-    kabupaten: a.city || a.regency || "",
-    provinsi: a.state || "",
+    desa:
+      a.village ||
+      a.suburb ||
+      a.hamlet ||
+      a.neighbourhood ||
+      "",
+
+    // ⚠️ kecamatan sering ADA DI SINI
+    kecamatan:
+      a.subdistrict ||
+      a.city_district ||
+      a.district ||
+      a.county ||
+      "",
+
+    kabupaten:
+      a.city ||
+      a.regency ||
+      a.county ||
+      "",
+
+    provinsi:
+      a.state ||
+      "",
   }
 }
